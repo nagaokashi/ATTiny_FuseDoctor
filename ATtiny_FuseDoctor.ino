@@ -56,7 +56,8 @@
         } else if (sig == ATTINY24 || sig == ATTINY44 || sig == ATTINY84 ||
                    sig == ATTINY25 || sig == ATTINY45 || sig == ATTINY85) {
           writeFuse(LFUSE, 0xE2); // writeFuse(LFUSE, 0x62);
-          writeFuse(HFUSE, 0xDE); // writeFuse(HFUSE, 0xDF);
+          writeFuse(HFUSE, 0xDF); // Erase EEPROM
+          //writeFuse(HFUSE, 0xDE); // Retain EEPROM
           writeFuse(EFUSE, 0xFF);
         }
         readFuses();
